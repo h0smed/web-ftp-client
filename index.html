@@ -14,6 +14,241 @@
     <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
   </head>
   <body>
+    <style>
+@font-face {
+font-family: &quot;wgd&quot;;
+src: url(https://cdn.jsdelivr.net/gh/da2l/host@1/dist/fonts/wgd.woff) format(&quot;woff&quot;);
+font-weight: normal;
+font-style: normal;
+}
+[class^=&quot;wgd-&quot;]:before,
+[class*=&quot; wgd-&quot;]:before {
+font-family: &quot;wgd&quot; !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-variant: normal !important;
+text-transform: none !important;
+speak: none;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.wgd-usd:before {
+content: &quot;\61&quot;;
+}
+.wgd-eur:before {
+content: &quot;\62&quot;;
+}
+.wgd-btc:before {
+content: &quot;\63&quot;;
+}
+.wgd-times:before {
+content: &quot;\64&quot;;
+}
+@keyframes square {
+0% {
+transform: translateY(0) scale(1.5) rotate(0);
+opacity: 1
+}
+100% {
+transform: translateY(-600px) scale(1) rotate(-200deg);
+opacity: 0
+}
+}
+.WgD-particles i {
+font-size: 4em;
+font-weight: 400;
+position: absolute;
+bottom: -100px;
+animation: square 10s infinite;
+}
+.WgD-particles i:nth-child(6),
+.WgD-particles i:nth-child(4),
+.WgD-particles i:nth-child(11),
+.WgD-particles i:nth-child(8) {
+font-size: 3em;
+}
+.WgD-particles i:nth-child(2),
+.WgD-particles i:nth-child(3),
+.WgD-particles i:nth-child(10) {
+font-size: 2em;
+}
+.WgD-particles i {
+animation-duration: 16s;
+}
+.WgD-particles i:nth-child(1) {
+left: 15%;
+}
+.WgD-particles i:nth-child(2) {
+left: 24%;
+animation-duration: 8s
+}
+.WgD-particles i:nth-child(3) {
+left: 50%;
+animation-delay: 5s
+}
+.WgD-particles i:nth-child(4) {
+left: 40%;
+animation-delay: 7s;
+animation-duration: 15s
+}
+.WgD-particles i:nth-child(5) {
+left: 36%;
+animation-delay: 6s
+}
+.WgD-particles i:nth-child(6) {
+left: 44%;
+animation-delay: 10s;
+animation-duration: 20s
+}
+.WgD-particles i:nth-child(7) {
+left: 58%;
+animation-delay: 2s;
+animation-duration: 18s
+}
+.WgD-particles i:nth-child(8) {
+left: 45%;
+animation-duration: 14s
+}
+.WgD-particles i:nth-child(9) {
+left: 66%;
+animation-delay: 3s;
+animation-duration: 12s
+}
+.WgD-particles i:nth-child(10) {
+left: 74%;
+animation-duration: 25s
+}
+.WgD-particles i:nth-child(11) {
+left: 80%;
+animation-delay: 4s
+}
+body.ab-is-detected {
+overflow: hidden !important;
+}
+[id=WgD] {
+display: none;
+}
+[id=WgD].is-detected {
+display: block;
+}
+@keyframes wgdfade {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+#WgD {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+font-size: 14px;
+animation: wgdfade .3s;
+z-index: 99999;
+}
+.spiderblogging {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 900;
+}
+.WgD-title {
+margin: 0;
+margin-bottom: .5em;
+font-size: 1.6em;
+font-weight: 800;
+font-family: &#39;bein-normal&#39;, sans-serif;
+color: #333;
+}
+.WgD-text {
+margin: 0;
+font-weight: 400;
+font-family: &#39;bein-normal&#39;, sans-serif;
+color:#6d707a;
+}
+.WgD-reload {
+text-decoration: none;
+display: inline-block;
+margin-top: 2em;
+font-weight: 500;
+transition: transform .3s;
+font-family: &#39;bein-normal&#39;, sans-serif;
+}
+.WgD-reload:hover {
+transform: scale(1.05);
+}
+.WgD-close {
+position: absolute;
+top: 0;
+right: 0;
+text-decoration: none;
+font-size: 20px;
+color: #999;
+padding: 1rem;
+line-height: 1;
+display: block;
+}
+.WgD-container img {
+max-width: 100%;
+margin-bottom: 1em;
+object-fit: cover;
+}
+/* Base
+-----------------------------------------*/
+[id=WgD] {
+font-family: &#39;Roboto&#39;, sans-serif; /*fuente*/
+background: #FF416C; /*fondo por defecto */
+background: linear-gradient(to right, #8950fc, #7e57c2);
+}
+.WgD-particles i {
+color: rgba(0, 0, 0, 0.2); /*color particulas*/
+}
+/* Cuerpo
+-----------------------------------------*/
+.WgD-container {
+padding: 3.2em; /*naruto(relleno)*/
+max-width: 450px; /*ancho maximo*/
+background-color: #fff; /*color*/
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+text-align: center;
+line-height: 1.5;
+border-radius: 10px;
+color: #37474F;
+}
+.WgD-title {
+font-size: 1.6em;
+}
+.WgD-text {
+font-size: 1.2em;
+}
+/* Reload
+-----------------------------------------*/
+a.WgD-reload {
+color: #fff !important;
+}
+.WgD-reload {
+box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px;
+color: #fff;
+padding: 1em 1.5em;
+background: #f760b4; /*color*/
+border-radius: 3px;
+}
+.WgD-reload:hover {
+color: #fff;
+}
+.WgD-close:hover {
+color: #464646;
+}
+/* Images
+-----------------------------------------*/
+.WgD-container img {
+max-height: 200px;
+</style>
     <div class="universal-loader"></div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
          
@@ -26,6 +261,8 @@
       </div>
     </div>
     <div class='container'>
+      <br />
+      <br />
 <div dir="rtl" style="text-align: center;" trbidi="on">
 <span
   style="font-family:arial;font-size: x-large; font-weight: 400;"
@@ -61,6 +298,57 @@ All CopyRights Reserved <a href="https://tapmybio.com/h0smed" target="_blank">Ha
     <script src="js/libs/backbone/Backbone.ModelBinder-min.js"></script>
     <script src="js/libs/handlebars/handlebars.js"></script>
     <script src="js/script.js"></script>
-
+<div id='WgD'>
+<div class='spiderblogging'>
+<div class='WgD-container'>
+<h3 class='WgD-title'>Ad Blocker Detected!</h3>
+<p class='WgD-text'>Please disable <strong>Adblock</strong> to continue, Support the site by disabling adlocker, We Will show only Privacy Respected Ads</p>
+<a class='WgD-reload' href='/' onclick='adBlockReload()'>Disable Adblock And Reload</a>
+</div>
+</div>
+<div class='WgD-particles'>
+<i class='wgd-usd'></i>
+<i class='wgd-eur'></i>
+<i class='wgd-usd'></i>
+<i class='wgd-eur'></i>
+<i class='wgd-btc'></i>
+<i class='wgd-usd'></i>
+<i class='wgd-usd'></i>
+<i class='wgd-eur'></i>
+<i class='wgd-btc'></i>
+<i class='wgd-usd'></i>
+<i class='wgd-eur'></i>
+</div></div>f
+<!-- Adblock -->
+<script>
+function adBlockClose() {
+  document.getElementById("WgD").classList.remove("is-detected");
+  document.body.classList.remove("ab-is-detected")
+};
+function adBlockReload() {
+  window.location.reload();
+  return !1
+};
+function adBlockDetected() {
+  document.getElementById("WgD").classList.add("is-detected");
+  document.body.classList.add("ab-is-detected")
+};
+if(typeof fuckAdBlock !== 'undefined' || typeof FuckAdBlock !== 'undefined') {
+ adBlockDetected();
+} else {
+ var importFAB = document.createElement('script');
+ importFAB.onload = function() {
+  fuckAdBlock.onDetected(adBlockDetected)
+  fuckAdBlock.onNotDetected(adBlockNotDetected);
+ };
+ importFAB.onerror = function() {
+  adBlockDetected(); 
+ };
+ importFAB.integrity = 'sha256-xjwKUY/NgkPjZZBOtOxRYtK20GaqTwUCf7WYCJ1z69w=';
+ importFAB.crossOrigin = 'anonymous';
+ importFAB.src = 'https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js';
+ document.head.appendChild(importFAB);
+}
+</script>
    </body>
 </html>
